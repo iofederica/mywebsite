@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://federicapaolicelli.com/mywebsite/search/</loc>
+    <loc>https://iofederica.github.io/search/</loc>
   </url><url>
-    <loc>https://federicapaolicelli.com/mywebsite/categories/</loc>
+    <loc>https://iofederica.github.io/categories/</loc>
   </url><url>
-    <loc>https://federicapaolicelli.com/mywebsite/</loc>
+    <loc>https://iofederica.github.io/</loc>
   </url><url>
-    <loc>https://federicapaolicelli.com/mywebsite/tags/</loc>
+    <loc>https://iofederica.github.io/tags/</loc>
   </url>
 </urlset>
