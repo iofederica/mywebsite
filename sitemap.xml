@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/search/</loc>
+    <loc>https://federicapaolicelli.com/mywebsite/search/</loc>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://federicapaolicelli.com/mywebsite/categories/</loc>
   </url><url>
-    <loc>https://example.org/</loc>
+    <loc>https://federicapaolicelli.com/mywebsite/</loc>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://federicapaolicelli.com/mywebsite/tags/</loc>
   </url>
 </urlset>
