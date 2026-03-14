@@ -1,4 +1,4 @@
-baseURL = 'https://iofederica.github.io'
+baseURL = 'https://preview.federicapaolicelli.com'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'My New Amazing Hugo Site'
 theme = 'vortisil'
