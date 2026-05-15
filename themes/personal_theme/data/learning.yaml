@@ -1,0 +1,19 @@
+- name: "Course Name 1"
+  url: "https://coursera.org/learn/course-1"
+  certificate: "https://coursera.org/verify/XXXXXXXXXX"
+
+- name: "Course Name 2"
+  url: "https://edx.org/course/course-2"
+  certificate: ""
+
+- name: "Course Name 3"
+  url: "https://udemy.com/course/course-3"
+  certificate: "https://udemy.com/certificate/UC-XXXXXXXXXX"
+
+- name: "Course Name 4"
+  url: "https://linkedin.com/learning/course-4"
+  certificate: ""
+
+- name: "Course Name 5"
+  url: "https://coursera.org/learn/course-5"
+  certificate: "https://coursera.org/verify/YYYYYYYYYY"

@@ -1,0 +1,19 @@
+- name: "KI Wissen"
+  url: "https://www.kiwissen.de/de/"
+  description: "A research project that aimed to integrate existing knowledge into the data-driven AI functions of autonomous vehicles."
+
+- name: "Project Name 2"
+  url: "https://github.com/yourusername/project2"
+  description: "Brief one-line description of the project."
+
+- name: "Project Name 3"
+  url: "https://github.com/yourusername/project3"
+  description: "Brief one-line description of the project."
+
+- name: "Project Name 4"
+  url: "https://github.com/yourusername/project4"
+  description: "Brief one-line description of the project."
+
+- name: "Project Name 5"
+  url: "https://github.com/yourusername/project5"
+  description: "Brief one-line description of the project."

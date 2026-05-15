@@ -1,0 +1,35 @@
+- company: "Company Name #2"
+  city: "City"
+  country: "Country"
+  description: >
+    Brief description of what this company does, its sector, size, or mission.
+    Keep it to two or three sentences that give context for your roles there.
+  roles:
+    - title: "Job Title #2"
+      start: "2022"
+      end: "present"
+      tasks:
+        - "Responsibility or achievement #1"
+        - "Responsibility or achievement #2"
+        - "Responsibility or achievement #3"
+    - title: "Job Title #1"
+      start: "2019"
+      end: "2022"
+      tasks:
+        - "Responsibility or achievement #1"
+        - "Responsibility or achievement #2"
+
+- company: "Company Name #1"
+  city: "City"
+  country: "Country"
+  description: >
+    Brief description of what this company does. One or two sentences
+    about the organisation and its field.
+  roles:
+    - title: "Job Title"
+      start: "2015"
+      end: "2019"
+      tasks:
+        - "Responsibility or achievement #1"
+        - "Responsibility or achievement #2"
+        - "Responsibility or achievement #3"

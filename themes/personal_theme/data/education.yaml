@@ -1,0 +1,14 @@
+- degree: "Doctorate in <topic>"
+  institution: "University Name"
+  country: "Country"
+  year: "2022"
+
+- degree: "Master of Science in <topic>"
+  institution: "University Name"
+  country: "Country"
+  year: "2018"
+
+- degree: "Bachelor of Science in <topic>"
+  institution: "University Name"
+  country: "Country"
+  year: "2016"
