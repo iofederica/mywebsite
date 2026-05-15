@@ -1,0 +1,5 @@
+name = 'personal_theme'
+description = 'A minimal theme for my personal web page'
+
+[author]
+name = 'Federica Paolicelli'

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" data-theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ .Site.Title }}" />
+  <title>{{ .Site.Title }}</title>
+
+  <!-- Anti-FOUC: set theme before render -->
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "auto";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+
+  <!-- Fonts: Crimson Pro (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVIGATION
+       ===================================================== -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">{{ .Params.name_surname }}</a>
+      <div class="nav-links">
+        <a href="#about"    class="nav-btn">About</a>
+        <a href="#projects" class="nav-btn">Projects</a>
+        <a href="#learning" class="nav-btn">Learning</a>
+
+        <div class="theme-toggle" id="themeToggle">
+          <button class="nav-btn theme-btn" id="themeBtn" aria-haspopup="true" aria-expanded="false" aria-label="Choose colour theme">
+            <span id="themeIcon"><i class="fa-solid fa-circle-half-stroke"></i></span>
+            <span id="themeLabel">auto</span>
+            <i class="fa-solid fa-chevron-down theme-caret"></i>
+          </button>
+          <div class="theme-dropdown" id="themeDropdown" role="menu">
+            <button data-theme-val="light" role="menuitem"><i class="fa-solid fa-sun"></i> light</button>
+            <button data-theme-val="dark"  role="menuitem"><i class="fa-solid fa-moon"></i> dark</button>
+            <button data-theme-val="auto"  role="menuitem"><i class="fa-solid fa-circle-half-stroke"></i> auto</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       HOME SECTION
+       ===================================================== -->
+  <section id="home" aria-label="Home">
+    <div class="home-content">
+      <h1 class="home-heading">
+        <!-- Hello, I'm <span class="home-name">{{ .Params.name }}</span> -->
+        <span class="home-name">{{ .Params.name }}</span>
+      </h1>
+      <!-- <p class="home-tagline">{{ .Params.tagline }}</p> -->
+      <p class="home-tagline">
+        {{ .Params.tagline_prefix }}
+        <span class="tagline-rotate">
+          <span class="tagline-words">
+            {{ range .Params.tagline_words }}
+            <span class="tagline-word">{{ . }}</span>
+            {{ end }}
+          </span>
+        </span>
+      </p>
+
+      <div class="icon-links" role="list">
+
+        <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer"
+           class="icon-link" role="listitem" aria-label="LinkedIn profile">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+
+        <a href="{{ .Params.researchgate }}" target="_blank" rel="noopener noreferrer"
+           class="icon-link" role="listitem" aria-label="ResearchGate profile">
+          <i class="fa-brands fa-researchgate"></i>
+          <span>ResearchGate</span>
+        </a>
+
+        <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer"
+           class="icon-link" role="listitem" aria-label="GitHub profile">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+
+        <a href="mailto:{{ .Params.email }}"
+           class="icon-link" role="listitem" aria-label="Send email">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contact Me</span>
+        </a>
+
+        <a href="{{ .Params.resume_en }}" target="_blank" rel="noopener noreferrer"
+           class="icon-link" role="listitem" aria-label="Resume in English (PDF)">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>My CV</span>
+        </a>
+
+        <a href="{{ .Params.resume_de }}" target="_blank" rel="noopener noreferrer"
+           class="icon-link" role="listitem" aria-label="Lebenslauf auf Deutsch (PDF)">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>Mein Lebenslauf</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- =====================================================
+       ABOUT SECTION
+       ===================================================== -->
+  <section id="about" aria-label="About">
+    <div class="section-inner">
+
+      <div class="about-intro">
+        {{ .Content }}
+      </div>
+
+      <!-- Professional Experience -->
+      <h2 class="subsection-heading">Professional Experience</h2>
+
+      {{ range site.Data.experience }}
+      <div class="company">
+        <div class="company-header">
+          <h3 class="company-name">{{ .company }}</h3>
+          <span class="company-location">{{ .city }}, {{ .country }}</span>
+        </div>
+        <p class="company-description">{{ .description }}</p>
+
+        <div class="roles">
+          {{ range .roles }}
+          <div class="role">
+            <div class="role-header">
+              <span class="role-title">{{ .title }}</span>
+              <span class="role-years">{{ .start }} – {{ .end }}</span>
+            </div>
+            <ul class="role-tasks">
+              {{ range .tasks }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- Education -->
+      <h2 class="subsection-heading">Education</h2>
+
+      <div class="education-list">
+        {{ range site.Data.education }}
+        <div class="education-entry">
+          <div class="education-main">
+            <p class="degree">{{ .degree }}</p>
+            <p class="institution">{{ .institution }}, {{ .country }}</p>
+          </div>
+          <span class="edu-year">{{ .year }}</span>
+        </div>
+        {{ end }}
+      </div>
+
+      <button class="back-to-top" onclick="scrollToHome()" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- =====================================================
+       PROJECTS SECTION
+       ===================================================== -->
+  <section id="projects" aria-label="Projects">
+    <div class="section-inner">
+      <h2 class="section-heading">Projects</h2>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-prev" aria-label="Scroll left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel" id="projects-carousel" role="list">
+          {{ range site.Data.projects }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+             class="card" role="listitem">
+            <div class="card-inner">
+              <p class="card-title">{{ .name }}</p>
+              {{ with .description }}
+              <p class="card-desc">{{ . }}</p>
+              {{ end }}
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square card-icon"></i>
+          </a>
+          {{ end }}
+        </div>
+
+        <button class="carousel-btn carousel-next" aria-label="Scroll right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <button class="back-to-top" onclick="scrollToHome()" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- =====================================================
+       LEARNING SECTION
+       ===================================================== -->
+  <section id="learning" aria-label="Learning">
+    <div class="section-inner">
+      <h2 class="section-heading">Learning</h2>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-prev" aria-label="Scroll left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel" id="learning-carousel" role="list">
+          {{ range site.Data.learning }}
+          <a href="{{ if .certificate }}{{ .certificate }}{{ else }}{{ .url }}{{ end }}"
+             target="_blank" rel="noopener noreferrer"
+             class="card" role="listitem">
+            <div class="card-inner">
+              <p class="card-title">{{ .name }}</p>
+              {{ if .certificate }}
+              <p class="card-cert"><i class="fa-solid fa-certificate"></i> Certificate</p>
+              {{ end }}
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square card-icon"></i>
+          </a>
+          {{ end }}
+        </div>
+
+        <button class="carousel-btn carousel-next" aria-label="Scroll right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <button class="back-to-top" onclick="scrollToHome()" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer>
+    <p>
+      &copy; {{ now.Year }} {{ .Params.name_surname }}
+      &nbsp;·&nbsp;
+      Made with <i class="fa-solid fa-heart" aria-hidden="true"></i> and EXCALIDRAW
+      &nbsp;·&nbsp;
+      Powered by HUGO
+    </p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

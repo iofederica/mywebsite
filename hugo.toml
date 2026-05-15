@@ -1,4 +1,4 @@
 baseURL = 'https://preview.federicapaolicelli.com'
 languageCode = 'en-us'
 title = 'My New Amazing Hugo Site'
-theme = 'vortisil'
+theme = 'personal_theme'
